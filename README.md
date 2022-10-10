@@ -34,33 +34,21 @@ Add the view helper to your form - just before the submit button is usually a go
 Then enable it for the controller actions you wish. It works just like a `before_action`. Pass `only:` with the action names.
 
 ```ruby
-class UsersController < ApplicationController
-  cloudflare_turnstile only: [:create, :login_submit]
-
-  def new
-    # new user view
-  end
-
-  def create
-    # Turnstile verification will automatically take place prior to here.
-
-    @user = User.create!(params)
-    ..
-  end
+class LoginController < ApplicationController
+  cloudflare_turnstile only: [:login_submit]
 
   def login
-    # login form view
   end
 
   def login_submit
-    # Turnstile verification will automatically take place prior to here.
+    # Turnstile verification will take place here - prior to code. If it catches a spam bot it will halt it.
 
     ..
   end
 end
 ```
 
-By default, it responds with no content (only headers: `head(200)`). This way the spam bot thinks they have been successful and will spend less time making requests to your website.
+When catching a spam bot, it defaults to sending no content with a 200 status code. This way the spam bot will assume it was successful - tricking it.
 
 ## Credits
 
