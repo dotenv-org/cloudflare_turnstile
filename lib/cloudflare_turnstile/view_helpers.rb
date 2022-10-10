@@ -2,7 +2,6 @@
 
 module CloudflareTurnstile
   module ViewHelpers
-
     # Builds the Turnstile html
     #
     # @return [String] the generated html
@@ -16,13 +15,13 @@ module CloudflareTurnstile
     private
 
     def script_tag
-      content_tag(:script, src: js_src, "async" => true, "defer" => true) do
+      content_tag(:script, :src => js_src, "async" => true, "defer" => true) do
         ""
       end
     end
 
     def turnstile_div
-      content_tag(:div, class: "cf-turnstile", "data-sitekey" => site_key) do
+      content_tag(:div, :class => "cf-turnstile", "data-sitekey" => site_key) do
         ""
       end
     end

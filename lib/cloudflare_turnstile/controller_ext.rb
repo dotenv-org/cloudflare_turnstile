@@ -3,7 +3,6 @@
 module CloudflareTurnstile
   module ControllerExt
     module ClassMethods
-
       # Enables Turnstile on a controller action
       #
       #
@@ -42,7 +41,7 @@ module CloudflareTurnstile
         head(200) # respond with no content and 200 since the bot will think it has submitted properly
       end
     end
-    
+
     def cloudflare_turnstile_verify_url
       "https://challenges.cloudflare.com/turnstile/v0/siteverify"
     end

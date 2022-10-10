@@ -6,7 +6,6 @@ require_relative "cloudflare_turnstile/view_helpers"
 require_relative "cloudflare_turnstile/railtie"
 
 module CloudflareTurnstile
-	class << self
-	end
+  class << self
+  end
 end
-
