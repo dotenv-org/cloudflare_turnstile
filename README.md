@@ -14,6 +14,13 @@ gem "cloudflare_turnstile"
 
 ## Usage
 
+Set the following variables in your environment, .env file, or an initializer.
+
+```
+CLOUDFLARE_TURNSTILE_SITE_KEY=""
+CLOUDFLARE_TURNSTILE_SECRET_KEY=""
+```
+
 Add the view helper to your form - just before the submit button is usually a good spot.
 
 ```erb
