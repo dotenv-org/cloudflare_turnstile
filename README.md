@@ -50,6 +50,10 @@ end
 
 When catching a spam bot, it defaults to sending no content with a 200 status code. This way the spam bot will assume it was successful - tricking it.
 
+## Example
+
+![](./cloudflare_turnstile.png)
+
 ## Credits
 
 Inspiration [invisible_captcha](https://github.com/markets/invisible_captcha)
